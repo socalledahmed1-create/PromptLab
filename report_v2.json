@@ -1,136 +1,91 @@
 {
   "suite": "smoke_v2",
   "prompt_file": "prompts/classify_v2.txt",
-  "prompt_hash": "a5302de57b34",
+  "prompt_hash": "ddb4f60596a9",
   "runs": 1,
-  "model": "stubmodel",
+  "model": {
+    "temperature": 0.0,
+    "max_tokens": 256
+  },
   "totals": {
     "cases": 5,
     "passed": 5,
     "failed": 0,
     "flaky": 0,
-    "assertions": 5,
-    "assertions_passed": 5,
-    "assertions_failed": 0,
-    "tokens_in": 848,
+    "tokens_in": 51,
     "tokens_out": 11,
-    "wall_ms": 761.98
+    "wall_ms": 1353.41
   },
   "cases": [
     {
       "id": "T001",
-      "input": "I was charged twice for my monthly subscription.",
-      "status": "PASS",
-      "runs": [
+      "status": "pass",
+      "pass_rate": 1.0,
+      "tokens_out_avg": 2.0,
+      "assertions": [
         {
-          "run": 1,
-          "output": "billing",
-          "finish": "stop",
-          "tokens_in": 172,
-          "tokens_out": 2,
-          "wall_ms": 172.9,
-          "assertions": [
-            {
-              "type": "contains",
-              "expected": "billing",
-              "passed": true
-            }
-          ],
-          "passed": true
+          "type": "contains",
+          "passed": 1,
+          "failed": 0
         }
-      ]
+      ],
+      "failures": []
     },
     {
       "id": "T002",
-      "input": "The website crashes whenever I try to upload a file.",
-      "status": "PASS",
-      "runs": [
+      "status": "pass",
+      "pass_rate": 1.0,
+      "tokens_out_avg": 3.0,
+      "assertions": [
         {
-          "run": 1,
-          "output": "technical",
-          "finish": "stop",
-          "tokens_in": 173,
-          "tokens_out": 3,
-          "wall_ms": 148.27,
-          "assertions": [
-            {
-              "type": "contains",
-              "expected": "technical",
-              "passed": true
-            }
-          ],
-          "passed": true
+          "type": "contains",
+          "passed": 1,
+          "failed": 0
         }
-      ]
+      ],
+      "failures": []
     },
     {
       "id": "T003",
-      "input": "I cannot log into my account.",
-      "status": "PASS",
-      "runs": [
+      "status": "pass",
+      "pass_rate": 1.0,
+      "tokens_out_avg": 2.0,
+      "assertions": [
         {
-          "run": 1,
-          "output": "account",
-          "finish": "stop",
-          "tokens_in": 167,
-          "tokens_out": 2,
-          "wall_ms": 151.3,
-          "assertions": [
-            {
-              "type": "contains",
-              "expected": "account",
-              "passed": true
-            }
-          ],
-          "passed": true
+          "type": "contains",
+          "passed": 1,
+          "failed": 0
         }
-      ]
+      ],
+      "failures": []
     },
     {
       "id": "T004",
-      "input": "My package has not arrived yet.",
-      "status": "PASS",
-      "runs": [
+      "status": "pass",
+      "pass_rate": 1.0,
+      "tokens_out_avg": 2.0,
+      "assertions": [
         {
-          "run": 1,
-          "output": "shipping",
-          "finish": "stop",
-          "tokens_in": 167,
-          "tokens_out": 2,
-          "wall_ms": 145.12,
-          "assertions": [
-            {
-              "type": "contains",
-              "expected": "shipping",
-              "passed": true
-            }
-          ],
-          "passed": true
+          "type": "contains",
+          "passed": 1,
+          "failed": 0
         }
-      ]
+      ],
+      "failures": []
     },
     {
       "id": "T005",
-      "input": "Can you tell me what your service does?",
-      "status": "PASS",
-      "runs": [
+      "status": "pass",
+      "pass_rate": 1.0,
+      "tokens_out_avg": 2.0,
+      "assertions": [
         {
-          "run": 1,
-          "output": "other",
-          "finish": "stop",
-          "tokens_in": 169,
-          "tokens_out": 2,
-          "wall_ms": 144.38,
-          "assertions": [
-            {
-              "type": "contains",
-              "expected": "other",
-              "passed": true
-            }
-          ],
-          "passed": true
+          "type": "contains",
+          "passed": 1,
+          "failed": 0
         }
-      ]
+      ],
+      "failures": []
     }
   ]
 }

@@ -1,53 +1,61 @@
 {
-  "name": "smoke",
-  "prompt_file": "prompts/classify_v1.txt",
-  "model": "stubmodel",
-  "runs": 1,
-  "cases": [
-    {
-      "id": "T001",
-      "input": "I was charged twice for my monthly subscription.",
-      "assert": [
-        {
-          "contains": "billing"
-        }
-      ]
-    },
-    {
-      "id": "T002",
-      "input": "The website crashes whenever I try to upload a file.",
-      "assert": [
-        {
-          "contains": "technical"
-        }
-      ]
-    },
-    {
-      "id": "T003",
-      "input": "I cannot log into my account.",
-      "assert": [
-        {
-          "contains": "account"
-        }
-      ]
-    },
-    {
-      "id": "T004",
-      "input": "My package has not arrived yet.",
-      "assert": [
-        {
-          "contains": "shipping"
-        }
-      ]
-    },
-    {
-      "id": "T005",
-      "input": "Can you tell me what your service does?",
-      "assert": [
-        {
-          "contains": "other"
-        }
-      ]
-    }
-  ]
+"name": "smoke",
+"prompt_file": "prompts/classify_v1.txt",
+"model": {
+"temperature": 0.0,
+"max_tokens": 256
+},
+"runs": 1,
+"cases": [
+{
+"id": "T001",
+"input": "I was charged twice for my monthly subscription.",
+"assert": [
+{
+"type": "contains",
+"value": "billing"
+}
+]
+},
+{
+"id": "T002",
+"input": "The website crashes whenever I try to upload a file.",
+"assert": [
+{
+"type": "contains",
+"value": "technical"
+}
+]
+},
+{
+"id": "T003",
+"input": "I cannot log into my account.",
+"assert": [
+{
+"type": "contains",
+"value": "account"
+}
+]
+},
+{
+"id": "T004",
+"input": "My package has not arrived yet.",
+"assert": [
+{
+"type": "contains",
+"value": "shipping"
+}
+]
+},
+{
+"id": "T005",
+"input": "Can you tell me what your service does?",
+"assert": [
+{
+"type": "contains",
+"value": "other"
+}
+]
+}
+]
 }

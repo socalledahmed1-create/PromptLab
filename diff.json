@@ -12,7 +12,19 @@
     "baseline": 11,
     "candidate": 11,
     "delta": 0,
-    "percentage_change": 0.0
+    "percentage_change": 0.0,
+    "input": {
+      "baseline": 51,
+      "candidate": 51,
+      "delta": 0,
+      "percentage_change": 0.0
+    },
+    "output": {
+      "baseline": 11,
+      "candidate": 11,
+      "delta": 0,
+      "percentage_change": 0.0
+    }
   },
   "warnings": [
     "Baseline and candidate use different suite names."
@@ -21,37 +33,47 @@
     {
       "id": "T001",
       "classification": "unchanged",
-      "baseline_status": "PASS",
-      "candidate_status": "PASS",
-      "token_delta": 0
+      "baseline_status": "pass",
+      "candidate_status": "pass",
+      "baseline_pass_rate": 1.0,
+      "candidate_pass_rate": 1.0,
+      "token_delta": 0.0
     },
     {
       "id": "T002",
       "classification": "unchanged",
-      "baseline_status": "PASS",
-      "candidate_status": "PASS",
-      "token_delta": 0
+      "baseline_status": "pass",
+      "candidate_status": "pass",
+      "baseline_pass_rate": 1.0,
+      "candidate_pass_rate": 1.0,
+      "token_delta": 0.0
     },
     {
       "id": "T003",
       "classification": "unchanged",
-      "baseline_status": "PASS",
-      "candidate_status": "PASS",
-      "token_delta": 0
+      "baseline_status": "pass",
+      "candidate_status": "pass",
+      "baseline_pass_rate": 1.0,
+      "candidate_pass_rate": 1.0,
+      "token_delta": 0.0
     },
     {
       "id": "T004",
       "classification": "unchanged",
-      "baseline_status": "PASS",
-      "candidate_status": "PASS",
-      "token_delta": 0
+      "baseline_status": "pass",
+      "candidate_status": "pass",
+      "baseline_pass_rate": 1.0,
+      "candidate_pass_rate": 1.0,
+      "token_delta": 0.0
     },
     {
       "id": "T005",
       "classification": "unchanged",
-      "baseline_status": "PASS",
-      "candidate_status": "PASS",
-      "token_delta": 0
+      "baseline_status": "pass",
+      "candidate_status": "pass",
+      "baseline_pass_rate": 1.0,
+      "candidate_pass_rate": 1.0,
+      "token_delta": 0.0
     }
   ]
 }

@@ -23,10 +23,10 @@ class PromptLabTests(unittest.TestCase):
         prompt_file = ROOT / "prompts" / "classify_v1.txt"
 
         with open(prompt_file, "rb") as file:
-            prompt_text = file.read().decode("utf-8")
+            prompt_bytes = file.read()
 
-        result1 = promptlab.prompt_hash(prompt_text)
-        result2 = promptlab.prompt_hash(prompt_text)
+        result1 = promptlab.prompt_hash(prompt_bytes)
+        result2 = promptlab.prompt_hash(prompt_bytes)
 
         self.assertEqual(result1, result2)
         self.assertEqual(len(result1), 12)
@@ -47,7 +47,10 @@ class PromptLabTests(unittest.TestCase):
         # 1. contains
         self.assertTrue(
             promptlab.check_assertion(
-                {"contains": "billing"},
+                {
+                    "type": "contains",
+                    "value": "billing"
+                },
                 response
             )
         )
@@ -55,7 +58,10 @@ class PromptLabTests(unittest.TestCase):
         # 2. not_contains
         self.assertTrue(
             promptlab.check_assertion(
-                {"not_contains": "technical"},
+                {
+                    "type": "not_contains",
+                    "value": "technical"
+                },
                 response
             )
         )
@@ -63,7 +69,10 @@ class PromptLabTests(unittest.TestCase):
         # 3. equals
         self.assertTrue(
             promptlab.check_assertion(
-                {"equals": "billing"},
+                {
+                    "type": "equals",
+                    "value": "billing"
+                },
                 response
             )
         )
@@ -71,7 +80,10 @@ class PromptLabTests(unittest.TestCase):
         # 4. matches
         self.assertTrue(
             promptlab.check_assertion(
-                {"matches": "^billing$"},
+                {
+                    "type": "matches",
+                    "pattern": "^billing$"
+                },
                 response
             )
         )
@@ -84,7 +96,9 @@ class PromptLabTests(unittest.TestCase):
 
         self.assertTrue(
             promptlab.check_assertion(
-                {"json_valid": True},
+                {
+                    "type": "json_valid"
+                },
                 json_response
             )
         )
@@ -93,10 +107,9 @@ class PromptLabTests(unittest.TestCase):
         self.assertTrue(
             promptlab.check_assertion(
                 {
-                    "json_field_equals": {
-                        "field": "category",
-                        "value": "billing"
-                    }
+                    "type": "json_field_equals",
+                    "field": "category",
+                    "value": "billing"
                 },
                 json_response
             )
@@ -105,7 +118,10 @@ class PromptLabTests(unittest.TestCase):
         # 7. max_tokens
         self.assertTrue(
             promptlab.check_assertion(
-                {"max_tokens": 10},
+                {
+                    "type": "max_tokens",
+                    "value": 10
+                },
                 response
             )
         )
@@ -113,7 +129,10 @@ class PromptLabTests(unittest.TestCase):
         # 8. finish_is
         self.assertTrue(
             promptlab.check_assertion(
-                {"finish_is": "stop"},
+                {
+                    "type": "finish_is",
+                    "value": "stop"
+                },
                 response
             )
         )
@@ -138,8 +157,30 @@ class PromptLabTests(unittest.TestCase):
             msg=result.stdout + "\n" + result.stderr
         )
 
-        self.assertIn("Passed: 5", result.stdout)
-        self.assertIn("Failed: 0", result.stdout)
+        # The report goes to stdout.
+        # The human-readable --report summary goes to stderr
+        # only when --report is supplied.
+        report = json.loads(result.stdout)
+
+        self.assertEqual(
+            report["totals"]["cases"],
+            5
+        )
+
+        self.assertEqual(
+            report["totals"]["passed"],
+            5
+        )
+
+        self.assertEqual(
+            report["totals"]["failed"],
+            0
+        )
+
+        self.assertEqual(
+            report["totals"]["flaky"],
+            0
+        )
 
     def test_doctor(self):
         result = subprocess.run(
