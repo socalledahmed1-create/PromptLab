@@ -1,0 +1,57 @@
+{
+  "baseline": "report.json",
+  "candidate": "report_v2.json",
+  "summary": {
+    "regressed": 0,
+    "improved": 0,
+    "unchanged": 5,
+    "new": 0,
+    "removed": 0
+  },
+  "tokens": {
+    "baseline": 11,
+    "candidate": 11,
+    "delta": 0,
+    "percentage_change": 0.0
+  },
+  "warnings": [
+    "Baseline and candidate use different suite names."
+  ],
+  "cases": [
+    {
+      "id": "T001",
+      "classification": "unchanged",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "token_delta": 0
+    },
+    {
+      "id": "T002",
+      "classification": "unchanged",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "token_delta": 0
+    },
+    {
+      "id": "T003",
+      "classification": "unchanged",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "token_delta": 0
+    },
+    {
+      "id": "T004",
+      "classification": "unchanged",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "token_delta": 0
+    },
+    {
+      "id": "T005",
+      "classification": "unchanged",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "token_delta": 0
+    }
+  ]
+}

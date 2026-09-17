@@ -1,0 +1,53 @@
+{
+  "name": "smoke_v2",
+  "prompt_file": "prompts/classify_v2.txt",
+  "model": "stubmodel",
+  "runs": 1,
+  "cases": [
+    {
+      "id": "T001",
+      "input": "I was charged twice for my monthly subscription.",
+      "assert": [
+        {
+          "contains": "billing"
+        }
+      ]
+    },
+    {
+      "id": "T002",
+      "input": "The website crashes whenever I try to upload a file.",
+      "assert": [
+        {
+          "contains": "technical"
+        }
+      ]
+    },
+    {
+      "id": "T003",
+      "input": "I cannot log into my account.",
+      "assert": [
+        {
+          "contains": "account"
+        }
+      ]
+    },
+    {
+      "id": "T004",
+      "input": "My package has not arrived yet.",
+      "assert": [
+        {
+          "contains": "shipping"
+        }
+      ]
+    },
+    {
+      "id": "T005",
+      "input": "Can you tell me what your service does?",
+      "assert": [
+        {
+          "contains": "other"
+        }
+      ]
+    }
+  ]
+}
